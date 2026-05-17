@@ -1,6 +1,6 @@
 # QR Bazar (Q-Bazaar) — G2 Blue Byte
 
-> **Official G2 submission:** This project is published on branch [`qr-bazar`](https://github.com/Ethiopian-Cursor-Community/G2-blue-byte/tree/qr-bazar) in [Ethiopian-Cursor-Community/G2-blue-byte](https://github.com/Ethiopian-Cursor-Community/G2-blue-byte). See [docs/G2_BLUE_BYTE_QR_BAZAR.md](docs/G2_BLUE_BYTE_QR_BAZAR.md) for reviewers.
+> **Official G2 submission:** [Ethiopian-Cursor-Community/G2-blue-byte](https://github.com/Ethiopian-Cursor-Community/G2-blue-byte) — QR Bazar marketplace (G2 Blue Byte). See [docs/G2_BLUE_BYTE_QR_BAZAR.md](docs/G2_BLUE_BYTE_QR_BAZAR.md) for reviewers.
 
 ---
 

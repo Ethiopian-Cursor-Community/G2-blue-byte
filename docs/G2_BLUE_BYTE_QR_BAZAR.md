@@ -9,9 +9,9 @@ This branch contains the **complete, production QR Bazar marketplace** for the E
 | **Product** | QR Bazar — multi-portal bazaar platform (buyers, sellers, organizers, gatekeepers, admins) |
 | **Stack** | PHP 8+, MySQL, JavaScript, Chapa/Telebirr payments, QR tickets & gate scanning |
 | **Team** | G2 Blue Byte |
-| **Branch** | `qr-bazar` (this codebase) |
+| **Branch** | `main` (this codebase) |
 
-The repository `main` branch may contain other coursework (e.g. sign-language tooling). **Use this branch** for QR Bazar demos, grading, and review.
+The repository contains **only** the QR Bazar marketplace. Older non–QR Bazar files were removed from `main`.
 
 ## Quick proof (what to open first)
 
@@ -46,4 +46,4 @@ The repository `main` branch may contain other coursework (e.g. sign-language to
 ---
 
 **Repository:** [Ethiopian-Cursor-Community/G2-blue-byte](https://github.com/Ethiopian-Cursor-Community/G2-blue-byte)  
-**Branch:** `qr-bazar`
+**Branch:** `main`
