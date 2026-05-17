@@ -86,6 +86,10 @@ define('CHAPA_ROLE_REQUEST_FEE_ETB', (float) qb_env('CHAPA_ROLE_REQUEST_FEE_ETB'
 define('CHAPA_SELLER_EVENT_FEE_ETB', (float) qb_env('CHAPA_SELLER_EVENT_FEE_ETB', '99'));
 define('CHAPA_PROMO_FEE_ETB', (float) qb_env('CHAPA_PROMO_FEE_ETB', '120'));
 
+define('CURSOR_ENABLED', strtolower((string) qb_env('CURSOR_ENABLED', 'true')) !== 'false');
+define('CURSOR_API_KEY', (string) qb_env('CURSOR_API_KEY', ''));
+define('CURSOR_MODEL', (string) qb_env('CURSOR_MODEL', 'composer-2'));
+
 $qbIsDev = strtolower((string) qb_env('APP_ENV', 'production')) === 'development';
 ini_set('display_errors', $qbIsDev ? '1' : '0');
 error_reporting($qbIsDev ? E_ALL : (E_ALL & ~E_DEPRECATED & ~E_STRICT));

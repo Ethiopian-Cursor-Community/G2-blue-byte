@@ -1,0 +1,12 @@
+.qb-cursor-assist{position:fixed;right:16px;bottom:80px;z-index:1200}
+.qb-cursor-assist__fab{width:52px;height:52px;border-radius:50%;border:none;cursor:pointer;background:linear-gradient(135deg,#2a3582,#4f5fd4);color:#fff;box-shadow:0 8px 24px rgba(42,53,130,.35);font-size:1.3rem}
+.qb-cursor-assist__panel{position:absolute;right:0;bottom:60px;width:min(340px,calc(100vw - 24px));max-height:70vh;display:flex;flex-direction:column;background:#fff;border-radius:12px;box-shadow:0 12px 32px rgba(0,0,0,.15);overflow:hidden}
+.qb-cursor-assist__head{display:flex;align-items:center;gap:8px;padding:10px 12px;background:#2a3582;color:#fff}
+.qb-cursor-assist__head span{font-size:.65rem;opacity:.85;margin-left:auto;margin-right:4px}
+.qb-cursor-assist__head button{border:none;background:rgba(255,255,255,.2);color:#fff;border-radius:6px;width:26px;height:26px;cursor:pointer}
+.qb-cursor-assist__messages{flex:1;overflow-y:auto;padding:10px;display:flex;flex-direction:column;gap:6px}
+.qb-cursor-assist__msg{margin:0;padding:8px 10px;border-radius:8px;font-size:.85rem;max-width:90%}
+.qb-cursor-assist__msg--bot{background:rgba(42,53,130,.08);align-self:flex-start}
+.qb-cursor-assist__msg--user{background:#2a3582;color:#fff;align-self:flex-end}
+.qb-cursor-assist__form{display:flex;gap:6px;padding:8px;border-top:1px solid #e2e8f0}
+.qb-cursor-assist__form input{flex:1;border:1px solid #cbd5e1;border-radius:6px;padding:6px 8px}

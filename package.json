@@ -10,5 +10,8 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.54.2"
+  },
+  "dependencies": {
+    "@cursor/sdk": "^1.0.13"
   }
 }
