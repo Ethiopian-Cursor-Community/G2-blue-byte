@@ -1,0 +1,304 @@
+/* Ticket-style payment receipt (buyer ↔ seller verification) */
+
+.qb-pay-receipt-wrap {
+  max-width: 22rem;
+  width: 100%;
+  margin: 0 auto 2rem;
+  padding: 0 0.5rem;
+}
+
+.qb-pay-receipt-hint {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.qb-pay-receipt {
+  background: #fff;
+  color: #1a1a1a;
+  border-radius: 16px 16px 0 0;
+  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.12);
+  overflow: hidden;
+  position: relative;
+}
+
+html[data-theme="dark"] .qb-pay-receipt {
+  background: var(--bg-card);
+  color: var(--text);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+
+.qb-pay-receipt__section {
+  padding: 1.35rem 1.25rem 1.15rem;
+}
+
+.qb-pay-receipt__hero {
+  text-align: center;
+  padding-top: 1.5rem;
+}
+
+.qb-pay-receipt__emoji {
+  font-size: 2.25rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.qb-pay-receipt__title {
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.35rem;
+  color: inherit;
+}
+
+.qb-pay-receipt__subtitle {
+  margin: 0;
+  font-size: 0.88rem;
+  color: #6b7280;
+}
+
+html[data-theme="dark"] .qb-pay-receipt__subtitle {
+  color: var(--text-muted);
+}
+
+.qb-pay-receipt__perforation {
+  height: 1px;
+  margin: 0 1rem;
+  border: none;
+  border-top: 2px dashed color-mix(in srgb, var(--border-strong, #cbd5e1) 70%, transparent);
+  background: none;
+}
+
+.qb-pay-receipt__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem 1rem;
+  align-items: start;
+}
+
+.qb-pay-receipt__cell--full {
+  grid-column: 1 / -1;
+}
+
+.qb-pay-receipt__cell--right {
+  text-align: right;
+}
+
+.qb-pay-receipt__label {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9ca3af;
+  margin-bottom: 0.2rem;
+}
+
+html[data-theme="dark"] .qb-pay-receipt__label {
+  color: var(--text-muted);
+}
+
+.qb-pay-receipt__value {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: inherit;
+}
+
+.qb-pay-receipt__value--mono {
+  font-family: ui-monospace, monospace;
+  font-size: 0.82rem;
+  word-break: break-all;
+}
+
+.qb-pay-receipt__merchant .qb-pay-receipt__value {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.qb-pay-receipt__fine {
+  display: block;
+  font-size: 0.78rem;
+  color: #6b7280;
+  margin-top: 0.15rem;
+}
+
+.qb-pay-badge {
+  display: inline-block;
+  margin-top: 0.35rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent, #2e86c1) 14%, transparent);
+  color: var(--accent, #2e86c1);
+}
+
+/* Payment method “card” */
+.qb-pay-card {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+  padding: 0.75rem 0.85rem;
+  border-radius: 12px;
+  background: #f3f4f6;
+}
+
+html[data-theme="dark"] .qb-pay-card {
+  background: var(--bg-elevated);
+}
+
+.qb-pay-card__brand {
+  width: 40px;
+  height: 28px;
+  border-radius: 6px;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, #e5e7eb, #d1d5db);
+  position: relative;
+}
+
+.qb-pay-card__brand--telebirr {
+  background: linear-gradient(135deg, #22c55e, #15803d);
+}
+
+.qb-pay-card__brand--cash {
+  background: linear-gradient(135deg, #94a3b8, #64748b);
+}
+
+.qb-pay-card__brand--p2p {
+  background: linear-gradient(135deg, #60a5fa, #2563eb);
+}
+
+.qb-pay-card__brand--wallet_qr {
+  background: linear-gradient(135deg, #c084fc, #7c3aed);
+}
+
+.qb-pay-card__brand--telebirr::after,
+.qb-pay-card__brand--cash::after {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.qb-pay-card__body {
+  min-width: 0;
+  flex: 1;
+}
+
+.qb-pay-card__name {
+  font-weight: 800;
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
+.qb-pay-card__mask {
+  font-size: 0.8rem;
+  color: #6b7280;
+  letter-spacing: 0.02em;
+}
+
+html[data-theme="dark"] .qb-pay-card__mask {
+  color: var(--text-muted);
+}
+
+.qb-pay-card__method {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #9ca3af;
+  margin-top: 0.15rem;
+}
+
+/* Barcode */
+.qb-pay-receipt__barcode-block {
+  text-align: center;
+  padding: 0.5rem 0.75rem 1rem;
+}
+
+.qb-pay-barcode-svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Scalloped bottom */
+.qb-pay-receipt__scallop {
+  height: 14px;
+  margin-top: -2px;
+  background:
+    radial-gradient(circle at 10px 0, transparent 8px, #fff 9px);
+  background-size: 20px 14px;
+  background-repeat: repeat-x;
+  background-position: 0 0;
+}
+
+html[data-theme="dark"] .qb-pay-receipt__scallop {
+  background:
+    radial-gradient(circle at 10px 0, transparent 8px, var(--bg-card) 9px);
+  background-size: 20px 14px;
+  background-repeat: repeat-x;
+}
+
+.qb-pay-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: 0.88rem;
+  margin-bottom: 0.45rem;
+}
+
+.qb-pay-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.portal-buyer .qb-pay-receipt-wrap {
+  padding-bottom: 0.5rem;
+}
+
+.qb-pay-items {
+  margin-top: 1rem !important;
+  max-width: 34rem;
+  width: 100%;
+}
+
+@media (min-width: 860px) {
+  .qb-pay-receipt-wrap {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 !important;
+    display: grid !important;
+    grid-template-columns: minmax(320px, 360px) minmax(320px, 34rem) !important;
+    gap: 1rem !important;
+    align-items: start !important;
+    justify-content: center !important;
+  }
+
+  .qb-pay-receipt-hint {
+    grid-column: 1 / -1;
+    margin-bottom: 0.35rem;
+  }
+
+  .qb-pay-receipt {
+    grid-column: 1;
+    width: 100%;
+  }
+
+  .qb-pay-items {
+    grid-column: 2;
+    margin-top: 0 !important;
+    align-self: start;
+    width: 100%;
+    max-width: 34rem;
+    justify-self: center;
+  }
+}

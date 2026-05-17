@@ -1,0 +1,18 @@
+/* Minimal dashboards: neutral cards, no accent/danger borders */
+.qb-card {
+  background: var(--bg-elevated, #141418);
+  border: 1px solid var(--border, #2a2a32);
+  border-radius: var(--radius-md, 12px);
+  padding: 1rem 1.1rem;
+}
+
+.qb-card .stat-label {
+  font-size: 0.75rem;
+  color: var(--text-muted, #71717a);
+  margin-bottom: 0.25rem;
+}
+
+.qb-card .stat-value {
+  font-size: 1.35rem;
+  font-weight: 800;
+}

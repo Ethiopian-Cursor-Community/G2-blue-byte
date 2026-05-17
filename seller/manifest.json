@@ -1,0 +1,12 @@
+{
+  "name": "QR Bazar Seller",
+  "short_name": "Seller",
+  "description": "Manage your stall, sales, and QR on QR Bazar",
+  "start_url": "./dashboard.php",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#faf8f5",
+  "theme_color": "#1e293b",
+  "icons": []
+}

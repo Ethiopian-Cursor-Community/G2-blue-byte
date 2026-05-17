@@ -1,0 +1,10 @@
+{
+  "name": "Q-Bazaar Buyer",
+  "short_name": "Q-Bazaar",
+  "description": "QR bazar — scan, buy, track",
+  "start_url": "./home.php",
+  "display": "standalone",
+  "background_color": "#0c0c0f",
+  "theme_color": "#f59e0b",
+  "icons": []
+}

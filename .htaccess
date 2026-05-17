@@ -1,0 +1,11 @@
+Options -Indexes
+
+# Friendly 404 — change this path if the site is not served from /QR BAZAR/ under the server document root.
+ErrorDocument 404 /QR%20BAZAR/404.php
+
+RewriteEngine Off
+
+# PHP settings
+php_flag display_errors On
+php_value upload_max_filesize 10M
+php_value post_max_size 10M

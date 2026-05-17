@@ -1,0 +1,52 @@
+name: E2E Matrix
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["main", "master"]
+  pull_request:
+
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        suite: [gate-payment, role-access]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Run E2E suite
+        env:
+          E2E_BASE_URL: ${{ secrets.E2E_BASE_URL }}
+          E2E_BUYER_LOGIN: ${{ secrets.E2E_BUYER_LOGIN }}
+          E2E_BUYER_PASSWORD: ${{ secrets.E2E_BUYER_PASSWORD }}
+          E2E_SELLER_LOGIN: ${{ secrets.E2E_SELLER_LOGIN }}
+          E2E_SELLER_PASSWORD: ${{ secrets.E2E_SELLER_PASSWORD }}
+          E2E_ORGANIZER_LOGIN: ${{ secrets.E2E_ORGANIZER_LOGIN }}
+          E2E_ORGANIZER_PASSWORD: ${{ secrets.E2E_ORGANIZER_PASSWORD }}
+          E2E_ADMIN_LOGIN: ${{ secrets.E2E_ADMIN_LOGIN }}
+          E2E_ADMIN_PASSWORD: ${{ secrets.E2E_ADMIN_PASSWORD }}
+          E2E_GATEKEEPER_LOGIN: ${{ secrets.E2E_GATEKEEPER_LOGIN }}
+          E2E_GATEKEEPER_PASSWORD: ${{ secrets.E2E_GATEKEEPER_PASSWORD }}
+        run: |
+          if [ "${{ matrix.suite }}" = "gate-payment" ]; then
+            npx playwright test tests/e2e/payment-gate.spec.js
+          else
+            npx playwright test tests/e2e/role-portal-access.spec.js
+          fi
+

@@ -1,0 +1,7 @@
+# Serve images only; no PHP execution in uploads
+<FilesMatch "\.(?i:png)$">
+  Header set X-Content-Type-Options nosniff
+</FilesMatch>
+<FilesMatch "\.(?i:php|phtml)$">
+  Require all denied
+</FilesMatch>

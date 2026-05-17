@@ -1,0 +1,12 @@
+{
+  "name": "qr-bazar/app",
+  "description": "QR Bazar",
+  "require": {
+    "php": ">=7.4",
+    "melaku/telebirr": "^2.0"
+  },
+  "config": {
+    "vendor-dir": "vendor",
+    "sort-packages": true
+  }
+}

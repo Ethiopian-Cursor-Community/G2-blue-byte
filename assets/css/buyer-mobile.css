@@ -1,0 +1,187 @@
+/* Buyer area: mobile-first, simple layout */
+.buyer-shell {
+  min-height: 100vh;
+  background: var(--bg, var(--bg-base, #eef5fc));
+  padding-bottom: 5rem;
+}
+
+.buyer-shell .buyer-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: color-mix(in srgb, var(--bg-card, #fffcfb) 92%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border, #e1c9c2);
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.buyer-shell .buyer-nav-simple {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.buyer-shell .buyer-nav-simple a {
+  font-size: 0.85rem;
+  padding: 0.4rem 0.65rem;
+  border-radius: var(--radius-sm, 8px);
+  text-decoration: none;
+  color: var(--text-secondary, #a1a1aa);
+  border: 1px solid transparent;
+}
+
+.buyer-shell .buyer-nav-simple a:hover,
+.buyer-shell .buyer-nav-simple a.active {
+  color: var(--accent, #2e86c1);
+  border-color: rgba(46, 134, 193, 0.38);
+  background: rgba(245, 158, 11, 0.08);
+}
+
+.buyer-shell .buyer-page {
+  padding: 1rem;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.buyer-shell h1 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin: 0 0 0.35rem;
+}
+
+.buyer-shell .buyer-card {
+  background: var(--bg-elevated, #141418);
+  border: 1px solid var(--border, #2a2a32);
+  border-radius: var(--radius-md, 12px);
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.buyer-shell .buyer-card h2 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin: 0 0 0.75rem;
+  color: var(--text-secondary, #a1a1aa);
+}
+
+.buyer-shell .buyer-stat-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.buyer-shell .buyer-stat {
+  flex: 1;
+  min-width: 120px;
+  padding: 0.75rem;
+  border-radius: var(--radius-md, 12px);
+  background: rgba(245, 158, 11, 0.06);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.buyer-shell .buyer-stat .v {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--accent, #f59e0b);
+}
+
+.buyer-shell .buyer-list-tx {
+  font-size: 0.9rem;
+}
+
+.buyer-shell .buyer-list-tx tr {
+  border-bottom: 1px solid var(--border, #2a2a32);
+}
+
+.buyer-shell .buyer-list-tx td {
+  padding: 0.5rem 0;
+  vertical-align: top;
+}
+
+.buyer-shell .buyer-bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  padding: 0.45rem 0.35rem calc(0.5rem + env(safe-area-inset-bottom));
+  background: linear-gradient(
+    0deg,
+    var(--bg-card, #ffffff) 0%,
+    color-mix(in srgb, var(--bg-card, #ffffff) 93%, var(--accent, #2e86c1)) 100%
+  );
+  border-top: 1px solid color-mix(in srgb, var(--border, #c8daf0) 88%, var(--accent, #2e86c1) 12%);
+  box-shadow:
+    0 -1px 0 color-mix(in srgb, #ffffff 65%, transparent),
+    0 -8px 28px rgba(26, 43, 60, 0.08);
+  backdrop-filter: saturate(1.12) blur(12px);
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .buyer-shell .buyer-bottom-nav {
+    box-shadow:
+      0 -1px 0 color-mix(in srgb, #ffffff 8%, transparent),
+      0 -8px 32px rgba(0, 0, 0, 0.45);
+  }
+}
+html[data-theme="dark"] .buyer-shell .buyer-bottom-nav {
+  box-shadow:
+    0 -1px 0 color-mix(in srgb, #ffffff 8%, transparent),
+    0 -8px 32px rgba(0, 0, 0, 0.45);
+}
+
+.buyer-shell .buyer-bottom-nav a {
+  flex: 1;
+  text-align: center;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text-muted, #6c8498);
+  padding: 0.4rem 0.25rem;
+  border-radius: 12px;
+  position: relative;
+  transition: color 0.18s ease;
+}
+
+.buyer-shell .buyer-bottom-nav a span.ico {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 0.12rem;
+  position: relative;
+  z-index: 1;
+}
+
+.buyer-shell .buyer-bottom-nav a.active {
+  color: var(--accent, #2e86c1);
+}
+
+.buyer-shell .buyer-bottom-nav a.active::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 34px;
+  background: color-mix(in srgb, var(--accent, #2e86c1) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent, #2e86c1) 28%, transparent);
+  border-radius: 12px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@media (min-width: 900px) {
+  .buyer-shell .buyer-bottom-nav {
+    display: none;
+  }
+  .buyer-shell {
+    padding-bottom: 2rem;
+  }
+}
